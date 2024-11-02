@@ -195,7 +195,7 @@
     },
     {
       "name": "FD manager",
-      "summary": "An app for downloading files from links, allowing multiple simultaneous downloads..",
+      "summary": "An app for downloading files from links, allowing multiple simultaneous downloads.",
       "highlights": ["C#", ".NET Winform"],
       "date": "2022-05-12", 
       "image":"/assets/img/fast-download-project.png",
