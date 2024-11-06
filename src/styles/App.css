@@ -128,7 +128,7 @@ img {
     position: fixed;
     top: var(--header-height);
     right: -100%;
-    width: 80%;
+    width: 40%;
     height: 100%;
     padding: 2rem;
     background-color: var(--second-color);
@@ -502,13 +502,21 @@ img {
   gap: 1rem;
   padding: 1rem;
 }
-.basic-2\/3{
+.basic-2{
   flex-basis: 50%;
 }
-.basic-1\/3{
-  flex-basis: 50%;
+.basic-2 p{
+  text-align: justify;
+}
+.basic-1{
+  flex-basis: 40%;
   width: fit-content;
   height: max-content;
+}
+.welcome-title{
+  font-size: 50px;
+  word-spacing: normal;
+  line-height:3.5rem;
 }
 .rounded-full{
   border-radius: 50%;

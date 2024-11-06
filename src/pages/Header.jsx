@@ -1,33 +1,40 @@
 /* eslint-disable react/prop-types */
-import { Outlet, Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import React, { useEffect } from "react";
+import { Outlet, Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 function App({ resume }) {
   let location = useLocation();
   let linkHomePage = "/";
   let linkProjectsPage = "/projects";
   let linkCVPage = "/cv";
   let linkWorkPage = "/work";
+  const [isActive, setActive] = useState(false);
 
+  const toggleClass = () =>{
+    setActive(!isActive)
+    console.log('clicked');
+  }
   return (
     <>
       <SetTitlePage />
       <header className="l-header">
         <nav className="nav bd-grid">
           <div className="nav__logo">
-            {location.pathname === linkHomePage ? resume.basics.profiles.map((profile) => (
-              <React.Fragment key={profile.network}>
-                <a href={profile.url} className="home__social-icon">
-                  <i className={`bx ${profile.icon}`}></i>
-                </a>
-              </React.Fragment>
-            )) :
-            <a href={linkHomePage} className="home__social-icon">
-              <span className="font-weight-bold">Hau&nbsp; </span>
-              Doan
-            </a>}
+            {location.pathname === linkHomePage ? (
+              resume.basics.profiles.map((profile) => (
+                <React.Fragment key={profile.network}>
+                  <a href={profile.url} className="home__social-icon">
+                    <i className={`bx ${profile.icon}`}></i>
+                  </a>
+                </React.Fragment>
+              ))
+            ) : (
+              <a href={linkHomePage} className="home__social-icon">
+                <span className="font-weight-bold">Hau&nbsp; </span>
+                Doan
+              </a>
+            )}
           </div>
-          <div className="nav__menu" id="nav-menu">
+          <div className={isActive ? "nav__menu show" : "nav__menu" } id="nav-menu">
             <ul className="nav__list">
               <li className="nav__item">
                 <Link
@@ -71,7 +78,7 @@ function App({ resume }) {
               </li>
             </ul>
           </div>
-          <div className="nav__toggle" id="nav-toggle">
+          <div className="nav__toggle" onClick={toggleClass} id="nav-toggle">
             <i className="bx bx-menu"></i>
           </div>
         </nav>
@@ -85,4 +92,17 @@ function SetTitlePage() {
     document.title = "Hau Doan";
   }, []);
 }
+
+// const showMenu = (toggleId, navId) => {
+//   const toggle = document.getElementById(toggleId),
+//     nav = document.getElementById(navId);
+
+//   if (toggle && nav) {
+//     toggle.addEventListener("click", () => {
+//       nav.classList.toggle("show");
+//     });
+//   }
+// };
+// showMenu("nav-toggle", "nav-menu");
+
 export default App;
