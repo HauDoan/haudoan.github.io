@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, createHashRouter } from "react-router-dom";
 import "./styles/App.css";
 import NavbarLayout from "./pages/Header.jsx";
 import FooterLayout from "./pages/Footer.jsx";
@@ -22,7 +22,7 @@ function Layout() {
     </>
   );
 }
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <Layout />,
     children: [
