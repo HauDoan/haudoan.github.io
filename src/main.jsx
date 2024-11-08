@@ -38,6 +38,10 @@ const router = createBrowserRouter([
         path: "projects",
         element: <Projects resumse={data} SetTitlePage={SetTitlePage}  />,
       },
+      {
+        path: "/*",
+        element: <About resume={data} SetTitlePage={SetTitlePage} />
+      }
     ],
   },
 ]);
