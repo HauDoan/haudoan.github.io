@@ -9,7 +9,7 @@ function App({ resume, SetTitlePage }) {
       <div className="header-cv">
         <h1 className="section-title">CV</h1>
         <div className="down-cv">
-          <a href="" className="home__social-icon">
+          <a href="/assets/CV_DoanNguyenVanHau.pdf" className="home__social-icon">
             <i className="bx bxs-file-pdf"></i>
           </a>
         </div>
