@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Outlet, Link, useLocation } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 function App({ resume }) {
   let location = useLocation();
   let linkHomePage = "/";
@@ -8,12 +8,11 @@ function App({ resume }) {
   let linkCVPage = "/cv";
   const [isActive, setActive] = useState(false);
 
-  const toggleClass = () =>{
-    setActive(!isActive)
-  }
+  const toggleClass = () => {
+    setActive(!isActive);
+  };
   return (
     <>
-      <SetTitlePage />
       <header className="l-header">
         <nav className="nav bd-grid">
           <div className="nav__logo">
@@ -27,12 +26,15 @@ function App({ resume }) {
               ))
             ) : (
               <a href={linkHomePage} className="home__social-icon">
-                <span className="font-weight-bold">Hau&nbsp; </span>
-                Doan
+                <span style={{ fontWeight: "bold" }}>Hau </span>
+                <span style={{fontWeight: "normal"}}>Doan</span>
               </a>
             )}
           </div>
-          <div className={isActive ? "nav__menu show" : "nav__menu" } id="nav-menu">
+          <div
+            className={isActive ? "nav__menu show" : "nav__menu"}
+            id="nav-menu"
+          >
             <ul className="nav__list">
               <li className="nav__item">
                 <Link
@@ -40,6 +42,7 @@ function App({ resume }) {
                   className={`nav__link ${
                     location.pathname === linkHomePage ? "active-link" : ""
                   }`}
+                  onClick={toggleClass}
                 >
                   About
                 </Link>
@@ -50,6 +53,7 @@ function App({ resume }) {
                   className={`nav__link ${
                     location.pathname === linkProjectsPage ? "active-link" : ""
                   }`}
+                  onClick={toggleClass}
                 >
                   Projects
                 </Link>
@@ -59,6 +63,7 @@ function App({ resume }) {
                   className={`nav__link ${
                     location.pathname === linkCVPage ? "active-link" : ""
                   }`}
+                  onClick={toggleClass}
                   to={linkCVPage}
                 >
                   CV
@@ -74,10 +79,5 @@ function App({ resume }) {
       <Outlet />
     </>
   );
-}
-function SetTitlePage() {
-  useEffect(() => {
-    document.title = "Hau Doan";
-  }, []);
 }
 export default App;

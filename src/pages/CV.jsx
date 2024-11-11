@@ -62,7 +62,7 @@ function App({ resume, SetTitlePage }) {
             <tbody>
               <tr>
                 <th className="timeline" style={{ fontWeight: "bold" }}>
-                  2023
+                {DateDifference(resume.education.startDate, resume.education.endDate)}
                 </th>
                 <td className="company">{resume.education.studyType}</td>
               </tr>
