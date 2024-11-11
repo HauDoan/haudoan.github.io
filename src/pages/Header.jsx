@@ -6,7 +6,6 @@ function App({ resume }) {
   let linkHomePage = "/";
   let linkProjectsPage = "/projects";
   let linkCVPage = "/cv";
-  let linkWorkPage = "/work";
   const [isActive, setActive] = useState(false);
 
   const toggleClass = () =>{
@@ -64,16 +63,6 @@ function App({ resume }) {
                   to={linkCVPage}
                 >
                   CV
-                </Link>
-              </li>
-              <li className="nav__item">
-                <Link
-                  className={`nav__link ${
-                    location.pathname === linkWorkPage ? "active-link" : ""
-                  }`}
-                  to={linkWorkPage}
-                >
-                  Work
                 </Link>
               </li>
             </ul>
