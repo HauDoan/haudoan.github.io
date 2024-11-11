@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useEffect, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, createHashRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import "./styles/App.css";
 import NavbarLayout from "./pages/Header.jsx";
 import FooterLayout from "./pages/Footer.jsx";
